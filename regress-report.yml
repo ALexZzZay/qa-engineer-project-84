@@ -1,0 +1,93 @@
+---
+test-cases:
+- summary: |
+    Проверка фильтра по ключевому слову
+  status: pass
+  
+- summary: |
+    Проверка фильтра по категории
+  status: pass
+       
+- summary: |
+    Проверка фильтра диапазона цены
+  status: fail
+
+- summary: |
+    Проверка фильтра In Stock
+  status: fail
+
+- summary: |
+    Проверка очистки поля фильтра по ключевому слову
+  status: pass
+    
+- summary: |
+    Проверка открытия карточки товара
+  status: pass
+    
+- summary: |
+    Проверка добавления товаров в корзину
+  status: pass
+
+- summary: |
+    Проверка кнопки удаления товара
+  status: pass
+    
+- summary: |
+    Проверка кнопки очистки корзины
+  status: pass
+       
+- summary: |
+    Проверка мобильной версии сайта
+  status: fail
+     
+bugreports:
+- summary: |
+    Не отображаются товары с учетом скидки в фильтре по цене
+  environment: |
+    Mozilla firefox 114.0.1
+    Ubuntu 20.04.6 LTS
+  steps-to-reproduce: |
+    - Ввести в поле От 500
+    - Ввести в поле До 1000
+  expected-result: |
+    Отображаются товары согласно введенному диапазону цены
+  actual-result: |
+    В результат работы фильтра попадают товары с ценами без учета скидки
+      
+- summary: |
+    Отсутствует мобильная версия сайта
+  environment: |
+    Mozilla firefox 114.0.1
+    Ubuntu 20.04.6 LTS
+  steps-to-reproduce: |
+    1. Открыть сайт https://hexlet-products-store.vercel.app/
+  expected-result: |
+    Отображается мобильная версия сайта.
+  actual-result: |
+    Отсутствует мобильная версия сайта
+    
+- summary: |
+    Не выровнены столбцы в корзине.
+  environment: |
+    Mozilla firefox 114.0.1
+    Ubuntu 20.04.6 LTS
+  steps-to-reproduce: |
+    1. На странице выбрать товары
+    2. Добавить товары в корзину
+    3. Нажать на кнопку перехода в корзину
+  expected-result: |
+    Элементы корзины выровнены.
+  actual-result: |
+    Столбцы количества, стоимости, кнопок удаления в корзине не выровнены
+
+- summary: |
+    Отключенный фильтр In stock отображает все товары
+  environment: |
+    Mozilla firefox 114.0.1
+    Ubuntu 20.04.6 LTS
+  steps-to-reproduce: |
+    1. На главной странице отключить фильтр In Stock
+  expected-result: |
+    Должны отображатся товары в наличии.
+  actual-result: |
+    Отображаются все товары
