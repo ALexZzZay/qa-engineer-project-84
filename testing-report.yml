@@ -1,0 +1,40 @@
+--- 
+- summary: |
+    Проверка фильтра по ключевому слову
+  status: pass
+  
+- summary: |
+    Проверка фильтра по категории
+  status: pass
+       
+- summary: |
+    Проверка фильтра диапазона цены
+  status: fail
+
+- summary: |
+    Проверка фильтра In Stock
+  status: pass
+
+- summary: |
+    Проверка очистки поля фильтра по ключевому слову
+  status: pass
+    
+- summary: |
+    Проверка открытия карточки товара
+  status: pass
+    
+- summary: |
+    Проверка добавления товаров в корзину
+  status: pass
+
+- summary: |
+    Проверка кнопки удаления товара
+  status: pass
+    
+- summary: |
+    Проверка кнопки очистки корзины
+  status: pass
+       
+- summary: |
+    Проверка мобильной версии сайта
+  status: fail
